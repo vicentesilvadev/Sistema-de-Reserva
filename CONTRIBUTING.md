@@ -1,4 +1,4 @@
-# Guia de Contribuição - Projeto Integrado II
+# Guia de Contribuição - Sistema de Reserva
 
 Este documento estabelece as normas obrigatórias para o desenvolvimento do sistema de Reserva. O cumprimento destas regras é essencial para manter a organização das sprints e a qualidade das entregas.
 
@@ -10,10 +10,9 @@ Adotamos o padrão de commits técnicos para facilitar o rastreio de mudanças. 
 
 **Use `feat` quando estiver criando classes novas, heranças ou novos atributos:**
 
-* **fix:** Correção de um erro ou bug técnico.
-* **refactor:** Melhoria na estrutura do código sem alterar sua função.
-* **chore:** Atualização de dependências, configurações ou ferramentas de build.
-* **docs:** Alterações exclusivas em documentações (README, CONTRIBUTING).
+* `feat(Cliente): criar classe Cliente com atributos nome e cpf`
+* `feat(Conta): implementar encapsulamento com getters e setters`
+* `feat(Funcionário): criar classe abstrata Funcionário`
 
 
 ---
