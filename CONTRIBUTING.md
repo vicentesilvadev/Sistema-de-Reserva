@@ -17,6 +17,27 @@ Adotamos o padrão de commits técnicos para facilitar o rastreio de mudanças. 
 
 ---
 
+## Fix
+
+**Use `fix` para consertar erros em métodos ou falhas de lógica:**
+
+* `fix(ContaBancária): corrigir bug no método sacar que aceitava valor negativo`
+* `fix(Autenticação): resolver erro de NullPointerException ao validar senha`
+
+
+---
+
+## Refactor
+
+**Use `refactor` quando o código já funciona, mas você resolveu aplicar um conceito para deixá-lo mais organizado:**
+
+* `refactor(Gerente): aplicar herança estendendo a classe Funcionário`
+* `refactor(Notificação): usar polimorfismo para métodos enviarMensagem`
+* `refactor(Interface): substituir herança múltipla por implementação de Interfaces `
+
+
+---
+
 ## 2. Fluxo de Branches e Segurança
 
 * **Proibição de Push Force:** É terminantemente proibido o uso de `git push --force`. Esta ação apaga o histórico do servidor e compromete o trabalho dos colegas. Resolva conflitos localmente usando `git merge` ou `git pull`.
