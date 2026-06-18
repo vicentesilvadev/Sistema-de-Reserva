@@ -8,7 +8,7 @@ Adotamos o padrão de commits técnicos para facilitar o rastreio de mudanças. 
 
 ## Feat
 
-** Use 'feat' quando estiver criando classes novas, heranças ou novos atributos:
+**Use `feat` quando estiver criando classes novas, heranças ou novos atributos:**
 
 * **fix:** Correção de um erro ou bug técnico.
 * **refactor:** Melhoria na estrutura do código sem alterar sua função.
