@@ -1,14 +1,13 @@
 # Guia de Contribuição - Projeto Integrado II
 
-Este documento estabelece as normas obrigatórias para o desenvolvimento do sistema de agendamento de salão. O cumprimento destas regras é essencial para manter a organização das sprints e a qualidade das entregas.
+Este documento estabelece as normas obrigatórias para o desenvolvimento do sistema de Reserva. O cumprimento destas regras é essencial para manter a organização das sprints e a qualidade das entregas.
 
 ## 1. Padronização de Mensagens (Conventional Commits)
 
 Adotamos o padrão de commits técnicos para facilitar o rastreio de mudanças. Os commits devem ser frequentes e nunca acumular alterações de arquivos diferentes em uma única mensagem.
 
-**Estrutura:** `tipo(escopo): descrição curta`
+## feat:** Use feat quando estiver criando classes novas, heranças ou novos atributos.
 
-* **feat:** Implementação de uma nova funcionalidade.
 * **fix:** Correção de um erro ou bug técnico.
 * **refactor:** Melhoria na estrutura do código sem alterar sua função.
 * **chore:** Atualização de dependências, configurações ou ferramentas de build.
