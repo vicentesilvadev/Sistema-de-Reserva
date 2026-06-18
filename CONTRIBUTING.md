@@ -6,14 +6,15 @@ Este documento estabelece as normas obrigatórias para o desenvolvimento do sist
 
 Adotamos o padrão de commits técnicos para facilitar o rastreio de mudanças. Os commits devem ser frequentes e nunca acumular alterações de arquivos diferentes em uma única mensagem.
 
-## feat:** Use feat quando estiver criando classes novas, heranças ou novos atributos.
+## Feat
+
+** Use 'feat' quando estiver criando classes novas, heranças ou novos atributos:
 
 * **fix:** Correção de um erro ou bug técnico.
 * **refactor:** Melhoria na estrutura do código sem alterar sua função.
 * **chore:** Atualização de dependências, configurações ou ferramentas de build.
 * **docs:** Alterações exclusivas em documentações (README, CONTRIBUTING).
 
-**Exemplo de commit ideal:** `feat(database): configurar tabelas de agendamento no postgresql`
 
 ---
 
