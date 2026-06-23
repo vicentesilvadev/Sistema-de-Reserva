@@ -18,8 +18,6 @@ public abstract class Usuario {
 
     }
 
-    public void ValidarDocumento(){
-        
-    }
+    public abstract void ValidarDocumento();
 
 }
