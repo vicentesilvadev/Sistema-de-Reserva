@@ -1,6 +1,6 @@
 package Sistema_de_Reserva;
-
-public class Usuario {
+ 
+public abstract class Usuario {
     
     private int idUsuario;
     private String nome;
