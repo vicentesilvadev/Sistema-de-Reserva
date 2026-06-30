@@ -13,8 +13,8 @@ public class RecursoEspaco {
     }
 
     public void getMostrar(){
-        System.out.println("Nome: "+nome);
-        System.out.println("Status: "+status);
-        System.out.println("Descrição "+descricao);
+        System.out.println("Nome: "+nome+"\n");
+        System.out.println("Status: "+status+"\n");
+        System.out.println("Observações: "+descricao+"\n");
     }
 }
