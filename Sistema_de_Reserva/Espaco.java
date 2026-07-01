@@ -1,16 +1,14 @@
 package Sistema_de_Reserva;
 
-
 import java.util.*;
 
 public class Espaco {
-    
-    ArrayList<RecursoEspaco> recurso = new ArrayList<>();
+
+    private ArrayList<RecursoEspaco> recurso = new ArrayList<>();
     private int idEspaco;
     private String nome;
     private int capacidadeMax;
     private double precoBase;
-    private List<String> recursos;
     private boolean disponibilidade = true;
 
     public Espaco( String nome, int id, int capacidadeMax, double precoBase){
@@ -20,8 +18,32 @@ public class Espaco {
         this.precoBase = precoBase;
     }
 
+    public int getIdEspaco(){
+        return idEspaco;
+    }
+
+    public String getNome(){
+        return nome;
+    }
+
+    public int getCapacidadeMax(){
+        return capacidadeMax;
+    }
+
+    public double getPrecoBase(){
+        return precoBase;
+    }
+
+    public List<RecursoEspaco> getRecursos(){
+        return recurso;
+    }
+
     public boolean VerificarDisponibilidade(){
-        return true;
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(boolean disponibilidade){
+        this.disponibilidade = disponibilidade;
     }
 
     public void setRecursos(String nome, String descricao, String status){
@@ -29,7 +51,7 @@ public class Espaco {
     }
 
     public double PrecoFinal(){
-       return 0.0; 
+       return precoBase;
     }
 
     public void getEspaco(){
