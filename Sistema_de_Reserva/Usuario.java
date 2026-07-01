@@ -1,5 +1,6 @@
 package Sistema_de_Reserva;
- 
+import java.util.Date;
+
 public abstract class Usuario {
     
     private int idUsuario;
@@ -14,10 +15,19 @@ public abstract class Usuario {
         this.telefone = telefone;
     }
 
-    public void RealizarReseva(){
+    
+    public void RealizarReserva(Espaco espaco, Evento evento, Date dataInicio, Date dataFinal) {
+        int idNovaReserva = 1; 
+        double valorInicial = 0.0; 
 
+        
+        Reserva novaReserva = new Reserva(idNovaReserva, "Pendente", valorInicial, dataInicio, dataFinal, this, espaco, evento);
+       
+        novaReserva.Valortotal();
+        
+        System.out.println("Processo de reserva iniciado pelo usuário: " + this.nome);
     }
 
-    public abstract void ValidarDocumento();
+    public abstract boolean ValidarDocumento();
 
-}
+} 
