@@ -28,6 +28,9 @@ public abstract class Usuario {
         System.out.println("Processo de reserva iniciado pelo usuário: " + this.nome);
     }
 
+    public String getNome(){
+        return nome;
+    }
     public abstract boolean ValidarDocumento();
 
 } 

@@ -10,8 +10,8 @@ public class ClienteJuridico extends Usuario {
     }
 
     @Override
-    public void ValidarDocumento(){
-
+    public boolean ValidarDocumento(){
+        return true;
     }
 
     
