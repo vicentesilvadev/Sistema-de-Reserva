@@ -1,41 +1,73 @@
 package Sistema_de_Reserva;
 
-public class Evento {
+import java.util.*;
 
-    private int idEvento;
-    private int participantes;
+public class Espaco {
+
+    private ArrayList<RecursoEspaco> recurso = new ArrayList<>();
+    private int idEspaco;
     private String nome;
-    private String tipo;
+    private int capacidadeMax;
+    private double precoBase;
+    private boolean disponibilidade = true;
 
-    public Evento( int id, int participantes, String nome, String tipo){
-        this.idEvento = id;
-        this.participantes = participantes;
+    public Espaco( String nome, int id, int capacidadeMax, double precoBase){
+        this.idEspaco = id;
         this.nome = nome;
-        this.tipo = tipo;
+        this.capacidadeMax = capacidadeMax;
+        this.precoBase = precoBase;
     }
 
-    public int getIdEvento(){
-        return idEvento;
-    }
-
-    public int getParticipantes(){
-        return participantes;
+    public int getIdEspaco(){
+        return idEspaco;
     }
 
     public String getNome(){
         return nome;
     }
 
-    public String getTipo(){
-        return tipo;
+    public int getCapacidadeMax(){
+        return capacidadeMax;
     }
 
-    public void ValidarCapacidade(int capacidadeMax) throws CapacidadeExcedidaException {
-        if (participantes > capacidadeMax) {
-            throw new CapacidadeExcedidaException(
-                "O evento \"" + nome + "\" tem " + participantes +
-                " participantes, mas a capacidade máxima do espaço é " + capacidadeMax + "."
-            );
+    public double getPrecoBase(){
+        return precoBase;
+    }
+
+    public List<RecursoEspaco> getRecursos(){
+        return recurso;
+    }
+
+    public boolean isDisponivel(){
+        return disponibilidade;
+    }
+
+    public void VerificarDisponibilidade() throws EspacoIndisponivelException {
+        if (!disponibilidade) {
+            throw new EspacoIndisponivelException("O espaço \"" + nome + "\" não está disponível.");
         }
     }
+
+    public void setDisponibilidade(boolean disponibilidade){
+        this.disponibilidade = disponibilidade;
+    }
+
+    public void setRecursos(String nome, String descricao, String status){
+        recurso.add(new RecursoEspaco(nome, status, descricao));
+    }
+
+    public double PrecoFinal(){
+       return precoBase;
+    }
+
+    public void mostrar(){
+        System.out.println("\n\nNome: "+nome+"\n\nId: "+idEspaco+"\n\nCapacidade Maxima: "+capacidadeMax+"\n\nPreco base: "+precoBase);
+
+        System.out.printf("\n ---- Recursos do Espaco ----\n\n ");
+
+        for (RecursoEspaco recursoEspaco : recurso) {
+            recursoEspaco.mostrar();
+        }
+    }
+
 }
