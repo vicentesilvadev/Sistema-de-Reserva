@@ -1,7 +1,7 @@
 package Sistema_de_Reserva;
 
 public class RecursoEspaco {
-    
+
     private String nome;
     private String status;
     private String descricao;
@@ -12,9 +12,21 @@ public class RecursoEspaco {
         this.descricao = descricao;
     }
 
+    public String getNome(){
+        return nome;
+    }
+
+    public String getStatus(){
+        return status;
+    }
+
+    public String getDescricao(){
+        return descricao;
+    }
+
     public void getMostrar(){
         System.out.println("Nome: "+nome+"\n");
         System.out.println("Status: "+status+"\n");
         System.out.println("Observações: "+descricao+"\n");
     }
-}
+}                                                                                                   

@@ -30,7 +30,12 @@ public class Evento {
         return tipo;
     }
 
-    public boolean ValidarCapacidade(int capacidadeMax){
-        return participantes <= capacidadeMax;
+    public void ValidarCapacidade(int capacidadeMax) throws CapacidadeExcedidaException {
+        if (participantes > capacidadeMax) {
+            throw new CapacidadeExcedidaException(
+                "O evento \"" + nome + "\" tem " + participantes +
+                " participantes, mas a capacidade máxima do espaço é " + capacidadeMax + "."
+            );
+        }
     }
 }

@@ -14,12 +14,15 @@ public class ClienteJuridico extends Usuario {
     }
 
     @Override
-    public boolean ValidarDocumento(){
+    public void ValidarDocumento() throws DocumentoInvalidoException {
         if (CNPJ == null) {
-            return false;
+            throw new DocumentoInvalidoException("CNPJ não informado para o usuário " + getNome() + ".");
         }
+
         String apenasNumeros = CNPJ.replaceAll("[^0-9]", "");
-        return apenasNumeros.length() == 14;
+        if (apenasNumeros.length() != 14) {
+            throw new DocumentoInvalidoException("CNPJ \"" + CNPJ + "\" inválido: deve conter 14 dígitos.");
+        }
     }
 
 }

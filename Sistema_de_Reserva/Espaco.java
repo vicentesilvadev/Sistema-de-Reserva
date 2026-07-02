@@ -38,8 +38,14 @@ public class Espaco {
         return recurso;
     }
 
-    public boolean VerificarDisponibilidade(){
+    public boolean isDisponivel(){
         return disponibilidade;
+    }
+
+    public void VerificarDisponibilidade() throws EspacoIndisponivelException {
+        if (!disponibilidade) {
+            throw new EspacoIndisponivelException("O espaço \"" + nome + "\" não está disponível.");
+        }
     }
 
     public void setDisponibilidade(boolean disponibilidade){
@@ -54,13 +60,13 @@ public class Espaco {
        return precoBase;
     }
 
-    public void getEspaco(){
+    public void mostrar(){
         System.out.println("\n\nNome: "+nome+"\n\nId: "+idEspaco+"\n\nCapacidade Maxima: "+capacidadeMax+"\n\nPreco base: "+precoBase);
 
         System.out.printf("\n ---- Recursos do Espaco ----\n\n ");
 
         for (RecursoEspaco recursoEspaco : recurso) {
-            recursoEspaco.getMostrar();
+            recursoEspaco.mostrar();
         }
     }
 
