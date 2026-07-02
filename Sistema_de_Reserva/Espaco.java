@@ -66,7 +66,7 @@ public class Espaco {
         System.out.printf("\n ---- Recursos do Espaco ----\n\n ");
 
         for (RecursoEspaco recursoEspaco : recurso) {
-            recursoEspaco.mostrar();
+            recursoEspaco.getMostrar();
         }
     }
 
