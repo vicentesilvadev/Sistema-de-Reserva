@@ -2,7 +2,7 @@ package Sistema_de_Reserva;
 import java.util.Date;
 
 public abstract class Usuario {
-    
+
     private int idUsuario;
     private String nome;
     private String email;
@@ -15,22 +15,39 @@ public abstract class Usuario {
         this.telefone = telefone;
     }
 
-    
-    public void RealizarReserva(Espaco espaco, Evento evento, Date dataInicio, Date dataFinal) {
-        int idNovaReserva = 1; 
-        double valorInicial = 0.0; 
-
-        
-        Reserva novaReserva = new Reserva(idNovaReserva, "Pendente", valorInicial, dataInicio, dataFinal, this, espaco, evento);
-       
-        novaReserva.Valortotal();
-        
-        System.out.println("Processo de reserva iniciado pelo usuário: " + this.nome);
+    public int getIdUsuario(){
+        return idUsuario;
     }
 
     public String getNome(){
         return nome;
     }
-    public abstract boolean ValidarDocumento();
 
-} 
+    public String getEmail(){
+        return email;
+    }
+
+    public String getTelefone(){
+        return telefone;
+    }
+
+    public void RealizarReserva(Espaco espaco, Evento evento, Date dataInicio, Date dataFinal) {
+
+        Reserva novaReserva = new Reserva("Pendente", dataInicio, dataFinal, this, espaco, evento);
+        novaReserva.Valortotal();
+
+        try {
+            novaReserva.Confirmar();
+            System.out.println("Processo de reserva iniciado pelo usuário: " + this.nome);
+        } catch (DocumentoInvalidoException e) {
+            System.out.println("Reserva não realizada (documento inválido): " + e.getMessage());
+        } catch (EspacoIndisponivelException e) {
+            System.out.println("Reserva não realizada (espaço indisponível): " + e.getMessage());
+        } catch (CapacidadeExcedidaException e) {
+            System.out.println("Reserva não realizada (capacidade excedida): " + e.getMessage());
+        }
+    }
+
+    public abstract void ValidarDocumento() throws DocumentoInvalidoException;
+
+}
